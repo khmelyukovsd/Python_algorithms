@@ -8,9 +8,11 @@
 
 from random import randint
 
+# генерация случайного массива
 array = [randint(-100, 99) for _ in range(10)]
 print(array)
 
+# функция алгоритма сортировки пузырьком
 def sort_bubble(array):
     n = 1
     while n < len(array):
