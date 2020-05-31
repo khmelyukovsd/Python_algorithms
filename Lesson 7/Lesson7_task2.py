@@ -5,9 +5,11 @@
 import random
 import operator
 
+# генерация случайного массива
 array = [round(random.uniform(0, 49), 2) for _ in range(10)]
 print(array)
 
+# функция сортировки слиянием
 def merge_sort(array, compare=operator.lt):
     if len(array) < 2:
         return array[:]
