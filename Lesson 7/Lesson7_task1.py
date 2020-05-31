@@ -5,3 +5,19 @@
 # a. алгоритм сортировки должен быть в виде функции, которая принимает на вход массив данных,
 # b. постарайтесь сделать алгоритм умнее, но помните, что у вас должна остаться сортировка пузырьком.
 # Улучшенные версии сортировки, например, расчёской, шейкерная и другие в зачёт не идут.
+
+from random import randint
+
+array = [randint(-100, 99) for _ in range(10)]
+print(array)
+
+def sort_bubble(array):
+    n = 1
+    while n < len(array):
+        for i in range(len(array) - 1):
+            if array[i] < array[i+1]:
+                array[i], array[i+1] = array[i+1], array[i]
+        n += 1
+    return array
+
+print(sort_bubble(array))
