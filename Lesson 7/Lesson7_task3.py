@@ -3,3 +3,31 @@
 # в одной находятся элементы, которые не меньше медианы, в другой — не больше медианы.
 # Примечание: задачу можно решить без сортировки исходного массива. Но если это слишком сложно,
 # используйте метод сортировки, который не рассматривался на уроках (сортировка слиянием также недопустима).
+
+from random import randint
+
+# Генерация массива случайных чисел
+m = randint(1, 10)
+array = [randint(0, 49) for _ in range(2*m+1)]
+print(array)
+
+# Функция поиска медианы
+def median(array):
+    median = 0
+    for i in range(len(array)):
+        n, m = 0, 0
+        for j in range(len(array)):
+            if array[j] != array[i]:
+                if array[j] > array[i]:
+                    n += 1
+                else:
+                    m += 1
+        if n == m:
+            median = array[i]
+            break
+    return median
+
+if median(array) == 0:
+    print('Число элементов меньше медианы не равно числу элементов больше медианы')
+else:
+    print (f'Медиана массива: {median(array)}')
